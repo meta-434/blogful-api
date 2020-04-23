@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a97d657-af1f-4ca5-a967-8122313a845f" name="Default Changelist" comment="refactor POST tests">
+    <list default="true" id="7a97d657-af1f-4ca5-a967-8122313a845f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/seeds/seed.xss_articles.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/xss-example.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/articles/articles-router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/articles/articles-router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/articles-endpoints.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/articles-endpoints.spec.js" afterDir="false" />
     </list>
@@ -15,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -31,6 +37,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -90,7 +97,7 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Articles Endpoints.GET /articles" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="Articles Endpoints.GET /articles/:article_id" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -102,11 +109,11 @@
       <test-file>$PROJECT_DIR$/test/articles-endpoints.spec.js</test-file>
       <test-names>
         <name value="Articles Endpoints" />
-        <name value="GET /articles" />
+        <name value="GET /articles/:article_id" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Articles Endpoints.POST /articles.creates an article, responding with 201 and the new article" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="Articles Endpoints.GET /articles/:article_id.Given an XSS attack article.removes CSS attack content" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -118,24 +125,25 @@
       <test-file>$PROJECT_DIR$/test/articles-endpoints.spec.js</test-file>
       <test-names>
         <name value="Articles Endpoints" />
-        <name value="POST /articles" />
-        <name value="creates an article, responding with 201 and the new article" />
+        <name value="GET /articles/:article_id" />
+        <name value="Given an XSS attack article" />
+        <name value="removes CSS attack content" />
       </test-names>
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Mocha.Articles Endpoints" />
-      <item itemvalue="Mocha.Articles Endpoints.GET /articles" />
-      <item itemvalue="Mocha.Articles Endpoints.POST /articles.creates an article, responding with 201 and the new article" />
       <item itemvalue="npm.dev" />
       <item itemvalue="npm.test" />
+      <item itemvalue="Mocha.Articles Endpoints.GET /articles/:article_id.Given an XSS attack article.removes CSS attack content" />
+      <item itemvalue="Mocha.Articles Endpoints.GET /articles/:article_id" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Mocha.Articles Endpoints" />
-        <item itemvalue="Mocha.Articles Endpoints.GET /articles" />
+        <item itemvalue="Mocha.Articles Endpoints.GET /articles/:article_id" />
         <item itemvalue="npm.test" />
-        <item itemvalue="Mocha.Articles Endpoints.POST /articles.creates an article, responding with 201 and the new article" />
+        <item itemvalue="Mocha.Articles Endpoints.GET /articles/:article_id.Given an XSS attack article.removes CSS attack content" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -151,7 +159,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587442781326</updated>
       <workItem from="1587442782516" duration="8981000" />
-      <workItem from="1587598009638" duration="5385000" />
+      <workItem from="1587598009638" duration="10218000" />
     </task>
     <task id="LOCAL-00001" summary=" refactor to use articles-router.js">
       <created>1587611256114</created>
@@ -167,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587611336255</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactor POST tests">
+      <created>1587612777242</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587612777242</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,34 +202,38 @@
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
     <state x="1478" y="318" key="#com.intellij.execution.impl.EditConfigurationsDialog/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587611672760" />
+    <state x="99" y="123" width="2094" height="1161" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1587627016328">
+      <screen x="0" y="23" width="3440" height="1362" />
+    </state>
+    <state x="99" y="123" width="2094" height="1161" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587627016328" />
     <state x="1474" y="513" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587610609662">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
     <state x="1474" y="513" key="#com.intellij.fileTypes.FileTypeChooser/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587610609662" />
-    <state x="1331" y="304" key="CommitChangelistDialog2" timestamp="1587612765278">
+    <state x="1331" y="304" key="CommitChangelistDialog2" timestamp="1587627110285">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
-    <state x="1331" y="304" key="CommitChangelistDialog2/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587612765278" />
+    <state x="1331" y="304" key="CommitChangelistDialog2/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587627110285" />
     <state x="1768" y="428" key="EnvironmentVariablesDialog" timestamp="1587611495815">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
     <state x="1768" y="428" key="EnvironmentVariablesDialog/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587611495815" />
-    <state width="3398" height="183" key="GridCell.Tab.0.bottom" timestamp="1587612765301">
+    <state width="2252" height="379" key="GridCell.Tab.0.bottom" timestamp="1587627110303">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
-    <state width="3398" height="183" key="GridCell.Tab.0.bottom/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587612765301" />
-    <state width="3398" height="183" key="GridCell.Tab.0.center" timestamp="1587612765300">
+    <state width="2252" height="379" key="GridCell.Tab.0.bottom/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587627110303" />
+    <state width="2252" height="379" key="GridCell.Tab.0.center" timestamp="1587627110303">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
-    <state width="3398" height="183" key="GridCell.Tab.0.center/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587612765300" />
-    <state width="3398" height="183" key="GridCell.Tab.0.left" timestamp="1587612765300">
+    <state width="2252" height="379" key="GridCell.Tab.0.center/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587627110303" />
+    <state width="2252" height="379" key="GridCell.Tab.0.left" timestamp="1587627110302">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
-    <state width="3398" height="183" key="GridCell.Tab.0.left/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587612765300" />
-    <state width="3398" height="183" key="GridCell.Tab.0.right" timestamp="1587612765301">
+    <state width="2252" height="379" key="GridCell.Tab.0.left/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587627110302" />
+    <state width="2252" height="379" key="GridCell.Tab.0.right" timestamp="1587627110303">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
-    <state width="3398" height="183" key="GridCell.Tab.0.right/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587612765301" />
+    <state width="2252" height="379" key="GridCell.Tab.0.right/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587627110303" />
     <state x="1229" y="342" key="SettingsEditor" timestamp="1587610965739">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
@@ -223,5 +242,9 @@
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
     <state x="1320" y="432" key="Vcs.Push.Dialog.v2/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587611339282" />
+    <state x="827" y="460" width="639" height="486" key="find.popup" timestamp="1587625191599">
+      <screen x="0" y="23" width="3440" height="1362" />
+    </state>
+    <state x="827" y="460" width="639" height="486" key="find.popup/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587625191599" />
   </component>
 </project>
