@@ -148,10 +148,10 @@
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
     <state x="1474" y="513" key="#com.intellij.fileTypes.FileTypeChooser/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587610609662" />
-    <state x="1331" y="304" key="CommitChangelistDialog2" timestamp="1587611210940">
+    <state x="1331" y="304" key="CommitChangelistDialog2" timestamp="1587611255954">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
-    <state x="1331" y="304" key="CommitChangelistDialog2/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587611210940" />
+    <state x="1331" y="304" key="CommitChangelistDialog2/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587611255954" />
     <state width="3398" height="264" key="GridCell.Tab.0.bottom" timestamp="1587611249588">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
@@ -172,5 +172,9 @@
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
     <state x="1229" y="342" key="SettingsEditor/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587610965739" />
+    <state x="1320" y="432" key="Vcs.Push.Dialog.v2" timestamp="1587611320794">
+      <screen x="0" y="23" width="3440" height="1362" />
+    </state>
+    <state x="1320" y="432" key="Vcs.Push.Dialog.v2/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587611320794" />
   </component>
 </project>
