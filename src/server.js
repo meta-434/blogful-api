@@ -1,7 +1,6 @@
 const app = require('./app');
 const knex = require('knex');
 const { PORT, DB_URL } = require('./config');
-const ArticlesService = require('./articles-service');
 
 const db = knex({
     client: 'pg',

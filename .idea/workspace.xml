@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a97d657-af1f-4ca5-a967-8122313a845f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/001.do.create_blogful_articles.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/001.undo.create_blogful_articles.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/002.do.alter_article_style.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/002.undo.alter_article_style.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postgrator-config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seeds/seed.blogful_articles.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/articles-service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/articles-endpoints.spec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/articles.fixtures.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="7a97d657-af1f-4ca5-a967-8122313a845f" name="Default Changelist" comment=" refactor to use articles-router.js">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/articles/articles-router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/articles-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/articles/articles-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/app.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/app.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/articles-endpoints.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/articles-endpoints.spec.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,14 +37,29 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.13.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="/usr/local/Cellar/yarn/1.19.2/libexec" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/articles" />
+      <recent name="$PROJECT_DIR$/articles" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.test">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -66,10 +80,44 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Articles Endpoints" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/test/articles-endpoints.spec.js</test-file>
+      <test-names>
+        <name value="Articles Endpoints" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Articles Endpoints.POST /articles.creates an article, responding with 201 and the new article" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/articles-endpoints.spec.js</test-file>
+      <test-names>
+        <name value="Articles Endpoints" />
+        <name value="POST /articles" />
+        <name value="creates an article, responding with 201 and the new article" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.test" />
+        <item itemvalue="Mocha.Articles Endpoints" />
+        <item itemvalue="Mocha.Articles Endpoints.POST /articles.creates an article, responding with 201 and the new article" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -84,28 +132,45 @@
       <option name="presentableId" value="Default" />
       <updated>1587442781326</updated>
       <workItem from="1587442782516" duration="8981000" />
+      <workItem from="1587598009638" duration="3901000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=" refactor to use articles-router.js" />
+    <option name="LAST_COMMIT_MESSAGE" value=" refactor to use articles-router.js" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1678" height="390" key="GridCell.Tab.0.bottom" timestamp="1587548874425">
+    <state x="1474" y="513" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587610609662">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
-    <state width="1678" height="390" key="GridCell.Tab.0.bottom/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587548874425" />
-    <state width="1678" height="390" key="GridCell.Tab.0.center" timestamp="1587548874425">
+    <state x="1474" y="513" key="#com.intellij.fileTypes.FileTypeChooser/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587610609662" />
+    <state x="1331" y="304" key="CommitChangelistDialog2" timestamp="1587611210940">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
-    <state width="1678" height="390" key="GridCell.Tab.0.center/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587548874425" />
-    <state width="1678" height="390" key="GridCell.Tab.0.left" timestamp="1587548874424">
+    <state x="1331" y="304" key="CommitChangelistDialog2/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587611210940" />
+    <state width="3398" height="264" key="GridCell.Tab.0.bottom" timestamp="1587611249588">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
-    <state width="1678" height="390" key="GridCell.Tab.0.left/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587548874424" />
-    <state width="1678" height="390" key="GridCell.Tab.0.right" timestamp="1587548874425">
+    <state width="3398" height="264" key="GridCell.Tab.0.bottom/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587611249588" />
+    <state width="3398" height="264" key="GridCell.Tab.0.center" timestamp="1587611249587">
       <screen x="0" y="23" width="3440" height="1362" />
     </state>
-    <state width="1678" height="390" key="GridCell.Tab.0.right/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587548874425" />
+    <state width="3398" height="264" key="GridCell.Tab.0.center/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587611249587" />
+    <state width="3398" height="264" key="GridCell.Tab.0.left" timestamp="1587611249586">
+      <screen x="0" y="23" width="3440" height="1362" />
+    </state>
+    <state width="3398" height="264" key="GridCell.Tab.0.left/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587611249586" />
+    <state width="3398" height="264" key="GridCell.Tab.0.right" timestamp="1587611249587">
+      <screen x="0" y="23" width="3440" height="1362" />
+    </state>
+    <state width="3398" height="264" key="GridCell.Tab.0.right/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587611249587" />
+    <state x="1229" y="342" key="SettingsEditor" timestamp="1587610965739">
+      <screen x="0" y="23" width="3440" height="1362" />
+    </state>
+    <state x="1229" y="342" key="SettingsEditor/615.-1057.1920.1057/0.23.3440.1362@0.23.3440.1362" timestamp="1587610965739" />
   </component>
 </project>
